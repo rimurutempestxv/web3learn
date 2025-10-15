@@ -1,390 +1,378 @@
 import React, { useState } from 'react';
-import { ChevronDown, Code2, Zap, BarChart3, Briefcase, BookOpen, Target, Users, TrendingUp } from 'lucide-react';
+import { ChevronRight, Code2 } from 'lucide-react';
 
 export default function Web3DevGuide() {
-  const [expanded, setExpanded] = useState(null);
+  const [expandedId, setExpandedId] = useState(null);
 
   const skills = [
     {
-      id: 'smart-contracts',
+      id: 1,
       title: 'Smart Contract Development',
-      icon: Code2,
-      color: 'from-blue-500 to-blue-600',
-      description: 'Write secure code that powers blockchain applications',
-      difficulty: 'Advanced',
-      timeToLearn: '6-12 months',
+      description: 'Build the backbone of Web3',
+      shortDesc: 'Write secure code that powers DeFi protocols and blockchain apps',
+      earnings: '$100K - $300K+',
+      difficulty: 'Hard',
+      timeframe: '6-12 months',
       tools: [
-        { name: 'Solidity', chain: 'Ethereum, Polygon, Arbitrum', desc: 'Most widely used, extensive tooling' },
-        { name: 'Vyper', chain: 'Ethereum', desc: 'Pythonic alternative, focus on security' },
-        { name: 'Move', chain: 'Aptos, Sui', desc: 'Modern language with unique safety features' },
-        { name: 'Rust', chain: 'Solana', desc: 'Systems language, steep learning curve but powerful' }
+        { name: 'Solidity', desc: 'Ethereum, Polygon, Arbitrum — most demand' },
+        { name: 'Rust', desc: 'Solana — high performance' },
+        { name: 'Move', desc: 'Aptos, Sui — modern & safe' },
+        { name: 'Vyper', desc: 'Ethereum alternative — security focused' }
       ],
-      earnings: [
-        'Contract audits: $5K-$50K+ per audit',
-        'Development jobs: $100K-$300K+ annually',
-        'Bounties & grants: $1K-$100K+',
-        'Freelance projects: $5K-$50K per project'
+      pay: [
+        'Audits: $5K-$50K+ per engagement',
+        'Full-time: $100K-$300K+',
+        'Grants & bounties: $1K-$100K+',
+        'Freelance: $5K-$50K per project'
       ],
-      opportunities: [
-        'Join Web3 startups or DAOs as a developer',
-        'Freelance on Upwork, Fiverr, or specialized Web3 job boards',
-        'Contribute to open-source protocols (grants available)',
-        'Compete in security auditing competitions (Sherlock, CodeHawks)',
-        'Launch your own DeFi protocol or tool'
+      gigs: [
+        'Join Web3 startups or DAOs',
+        'Freelance on Upwork, specialized boards',
+        'Audit smart contracts',
+        'Contribute to open-source (grant programs)',
+        'Start your own DeFi protocol'
       ],
-      prerequisites: [
+      need: [
         'Strong programming fundamentals',
-        'Understanding of programming paradigms',
-        'Comfort with debugging and testing',
-        'Knowledge of cryptography basics helpful'
+        'Comfortable with debugging',
+        'Desire to learn cryptography',
+        'Attention to security details'
       ],
-      risks: [
-        'Smart contracts handle real money—bugs can be catastrophic',
-        'Requires continuous learning as security threats evolve',
-        'High responsibility for users\' funds'
+      watch: [
+        'Code security is critical — bugs = real money lost',
+        'Constantly evolving threat landscape',
+        'High responsibility for users'
       ]
     },
     {
-      id: 'frontend',
-      title: 'Frontend + Web3 Integration',
-      icon: Zap,
-      color: 'from-purple-500 to-purple-600',
-      description: 'Build beautiful interfaces that connect to blockchains',
-      difficulty: 'Intermediate',
-      timeToLearn: '3-6 months',
+      id: 2,
+      title: 'Frontend + Web3',
+      description: 'Connect users to blockchains',
+      shortDesc: 'Build dApps that people actually want to use',
+      earnings: '$80K - $250K+',
+      difficulty: 'Medium',
+      timeframe: '3-6 months',
       tools: [
-        { name: 'JavaScript/TypeScript', chain: 'Core', desc: 'Essential for Web3 frontend development' },
-        { name: 'React.js', chain: 'UI Framework', desc: 'Industry standard for building SPAs' },
-        { name: 'Next.js', chain: 'React Framework', desc: 'Full-stack capabilities, SSR, better SEO' },
-        { name: 'Ethers.js', chain: 'Web3 Library', desc: 'Connect to Ethereum-compatible chains' },
-        { name: 'Wagmi', chain: 'React Hooks', desc: 'React hooks for Web3, simplifies wallet integration' },
-        { name: 'Viem', chain: 'Web3 Library', desc: 'Modern, modular alternative to Ethers.js' },
-        { name: 'RainbowKit', chain: 'Wallet UI', desc: 'Beautiful, accessible wallet connection component' }
+        { name: 'React.js', desc: 'Industry standard UI framework' },
+        { name: 'Next.js', desc: 'Full-stack, better for shipping' },
+        { name: 'TypeScript', desc: 'Better than vanilla JS for this' },
+        { name: 'Wagmi', desc: 'React hooks for wallet stuff' },
+        { name: 'Viem / Ethers.js', desc: 'Talk to blockchains' },
+        { name: 'RainbowKit', desc: 'Wallet connection UI (plug & play)' }
       ],
-      earnings: [
+      pay: [
         'Contract work: $3K-$20K per project',
-        'Full-time roles: $80K-$250K+ annually',
-        'Freelancing: $50-$200+ per hour',
-        'Building & monetizing dApps: Variable'
+        'Full-time: $80K-$250K+',
+        'Freelance: $50-$200+/hour',
+        'Build & monetize your own apps'
       ],
-      opportunities: [
-        'Build interactive dApps for DeFi protocols',
-        'Create NFT marketplaces and minting interfaces',
-        'Develop wallet dashboards and portfolio trackers',
-        'Join projects as a core contributor',
-        'Contribute to open-source Web3 libraries'
+      gigs: [
+        'Build DeFi interfaces & dashboards',
+        'Create NFT tools & marketplaces',
+        'Develop token portfolio trackers',
+        'Contribute to open-source libraries',
+        'Full-time at protocols as core dev'
       ],
-      prerequisites: [
-        'Proficiency in JavaScript/TypeScript',
-        'React experience (or willingness to learn)',
-        'Basic understanding of blockchain concepts',
-        'UX/design sensibility a plus'
+      need: [
+        'Solid React skills (or willing to learn fast)',
+        'Comfortable with JavaScript/TypeScript',
+        'Basic blockchain understanding',
+        'Good eye for UX matters here'
       ],
-      risks: [
-        'Rapid evolution of libraries and standards',
-        'Responsible for handling private keys and transactions',
-        'User experience directly impacts security'
+      watch: [
+        'Libraries change fast — keep up',
+        'You handle user keys & transactions',
+        'Bad UX = user loses money'
       ]
     },
     {
-      id: 'analytics',
+      id: 3,
       title: 'Blockchain Data Analytics',
-      icon: BarChart3,
-      color: 'from-emerald-500 to-emerald-600',
-      description: 'Visualize and interpret on-chain data insights',
-      difficulty: 'Intermediate',
-      timeToLearn: '2-4 months',
+      description: 'See what the data is telling you',
+      shortDesc: 'Turn on-chain data into insights people care about',
+      earnings: '$80K - $200K+',
+      difficulty: 'Easy-Medium',
+      timeframe: '2-4 months',
       tools: [
-        { name: 'SQL', chain: 'Query Language', desc: 'Essential for querying blockchain data' },
-        { name: 'Python', chain: 'Data Processing', desc: 'Data analysis, visualization, automation' },
-        { name: 'The Graph', chain: 'Indexing', desc: 'Query blockchain data with GraphQL' },
-        { name: 'Dune Analytics', chain: 'Dashboard Platform', desc: 'Create SQL-based dashboards, large community' },
-        { name: 'Flipside Crypto', chain: 'Dashboard Platform', desc: 'Competing platform with bounty programs' },
-        { name: 'Tableau/Looker', chain: 'Visualization', desc: 'Professional data visualization tools' }
+        { name: 'SQL', desc: 'Essential — query blockchain data' },
+        { name: 'Dune Analytics', desc: 'Build dashboards, bounty programs' },
+        { name: 'Python', desc: 'Data processing & automation' },
+        { name: 'The Graph', desc: 'Query with GraphQL' },
+        { name: 'Flipside Crypto', desc: 'Alternative platform + bounties' }
       ],
-      earnings: [
+      pay: [
         'Bounties: $500-$10K per dashboard',
-        'Full-time analyst: $80K-$200K+ annually',
-        'Freelance analysis: $100-$500+ per day',
-        'Research reports: $2K-$20K+ per report'
+        'Full-time: $80K-$200K+',
+        'Research reports: $2K-$20K+',
+        'Freelance: $100-$500+/day'
       ],
-      opportunities: [
-        'Create dashboards for DeFi protocols, NFT projects, Layer 2s',
-        'Participate in data bounty programs (Dune, Flipside)',
-        'Become an on-chain researcher for protocols',
-        'Publish insights and build personal brand',
-        'Advise projects on metrics and KPIs'
+      gigs: [
+        'Create dashboards for protocols',
+        'Win bounties on Dune & Flipside',
+        'Become an on-chain researcher',
+        'Publish insights & build personal brand',
+        'Advise projects on metrics'
       ],
-      prerequisites: [
-        'SQL knowledge (fundamental)',
+      need: [
+        'SQL fundamentals (this is it)',
         'Statistical thinking',
-        'Python basics (helpful but not required)',
-        'Curiosity about blockchain mechanics'
+        'Curiosity about how chains work',
+        'Python is nice but optional'
       ],
-      risks: [
-        'Data quality and reliability can be questionable',
-        'Competitive bounty programs',
-        'Requires staying current with protocol updates'
+      watch: [
+        'Data quality varies — validate everything',
+        'Bounty programs are competitive',
+        'Protocols change their events'
       ]
     }
   ];
 
-  const advancedRoles = [
-    { title: 'Security Auditor', desc: 'Audit smart contracts for vulnerabilities', earnings: '$20K-$200K+ per audit' },
-    { title: 'Compiler Engineer', desc: 'Build/optimize blockchain compilers', earnings: '$150K-$300K+' },
-    { title: 'Systems Architect', desc: 'Design blockchain infrastructure', earnings: '$200K-$400K+' },
-    { title: 'Protocol Researcher', desc: 'Research new protocols and mechanisms', earnings: '$100K-$300K+' },
-    { title: 'DevOps/Infrastructure', desc: 'Manage blockchain nodes and infrastructure', earnings: '$100K-$250K+' }
+  const advanced = [
+    { title: 'Security Auditor', money: '$20K-$200K+ per audit' },
+    { title: 'Compiler Engineer', money: '$150K-$300K+' },
+    { title: 'Systems Architect', money: '$200K-$400K+' },
+    { title: 'Protocol Researcher', money: '$100K-$300K+' },
+    { title: 'DevOps / Infrastructure', money: '$100K-$250K+' }
   ];
-
-  const pathComparison = [
-    { aspect: 'Entry Barrier', smart: 'High', frontend: 'Medium', analytics: 'Low' },
-    { aspect: 'Income Potential', smart: 'Very High', frontend: 'High', analytics: 'Medium-High' },
-    { aspect: 'Learning Curve', smart: 'Steep', frontend: 'Moderate', analytics: 'Gentle' },
-    { aspect: 'Job Demand', smart: 'Very High', frontend: 'High', analytics: 'Growing' },
-    { aspect: 'Remote Opportunities', smart: 'Excellent', frontend: 'Excellent', analytics: 'Excellent' }
-  ];
-
-  const SkillCard = ({ skill }) => {
-    const isExpanded = expanded === skill.id;
-    const IconComponent = skill.icon;
-
-    return (
-      <div className="mb-6 rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow bg-white">
-        <div 
-          onClick={() => setExpanded(isExpanded ? null : skill.id)}
-          className={`bg-gradient-to-r ${skill.color} p-6 cursor-pointer text-white`}
-        >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <IconComponent size={32} />
-              <div>
-                <h3 className="text-2xl font-bold">{skill.title}</h3>
-                <p className="text-blue-100">{skill.description}</p>
-              </div>
-            </div>
-            <ChevronDown size={24} className={`transform transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
-          </div>
-        </div>
-
-        {isExpanded && (
-          <div className="p-8 bg-gray-50 space-y-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-white p-4 rounded-lg border border-gray-200">
-                <p className="text-sm text-gray-600">Difficulty</p>
-                <p className="font-bold text-gray-900">{skill.difficulty}</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg border border-gray-200">
-                <p className="text-sm text-gray-600">Time to Learn</p>
-                <p className="font-bold text-gray-900">{skill.timeToLearn}</p>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-lg mb-4 flex items-center gap-2"><BookOpen size={20} /> Tools & Technologies</h4>
-              <div className="space-y-3">
-                {skill.tools.map((tool, i) => (
-                  <div key={i} className="bg-white p-4 rounded-lg border-l-4 border-blue-500">
-                    <div className="font-semibold text-gray-900">{tool.name}</div>
-                    <div className="text-sm text-gray-600">{tool.chain}</div>
-                    <div className="text-sm text-gray-700 mt-1">{tool.desc}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-lg mb-4 flex items-center gap-2"><TrendingUp size={20} /> Earning Potential</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {skill.earnings.map((e, i) => (
-                  <div key={i} className="bg-green-50 p-3 rounded-lg border border-green-200 text-sm">
-                    {e}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-lg mb-4 flex items-center gap-2"><Target size={20} /> Opportunities</h4>
-              <ul className="space-y-2">
-                {skill.opportunities.map((opp, i) => (
-                  <li key={i} className="flex gap-3 text-gray-700">
-                    <span className="text-blue-600 font-bold">•</span>
-                    {opp}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-lg mb-4">Prerequisites</h4>
-              <ul className="space-y-2">
-                {skill.prerequisites.map((pre, i) => (
-                  <li key={i} className="flex gap-3 text-gray-700">
-                    <span className="text-green-600 font-bold">✓</span>
-                    {pre}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-lg mb-4 text-red-600">Important Considerations</h4>
-              <ul className="space-y-2">
-                {skill.risks.map((risk, i) => (
-                  <li key={i} className="flex gap-3 text-gray-700">
-                    <span className="text-red-600 font-bold">⚠</span>
-                    {risk}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-5xl font-bold mb-4">Web3 Developer Career Guide</h1>
-          <p className="text-xl text-blue-100">Explore the most in-demand technical skills in blockchain</p>
+    <div className="bg-black text-white min-h-screen">
+      {/* Navigation */}
+      <div className="border-b border-gray-800 sticky top-0 z-50 bg-black/95 backdrop-blur">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="text-2xl font-black tracking-tighter">WEB3.DEV</div>
+          <div className="text-sm text-gray-400">Career paths in blockchain</div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        {/* Skills Section */}
+      {/* Hero */}
+      <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8">Core Technical Paths</h2>
-          {skills.map(skill => <SkillCard key={skill.id} skill={skill} />)}
+          <h1 className="text-7xl font-black tracking-tight mb-6 leading-tight">
+            Make money building<br />in Web3
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl">
+            Three proven paths to earn real income. Pick one. Go deep. Ship projects. Get paid.
+          </p>
         </div>
 
-        {/* Comparison Table */}
-        <div className="mb-16 bg-white rounded-xl overflow-hidden shadow-xl">
-          <div className="bg-gradient-to-r from-indigo-600 to-blue-600 p-6 text-white">
-            <h2 className="text-2xl font-bold flex items-center gap-2"><Users size={28} /> Quick Comparison</h2>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-gray-100">
-                <tr>
-                  <th className="p-4 text-left font-bold text-gray-900">Aspect</th>
-                  <th className="p-4 text-center font-bold text-blue-600">Smart Contracts</th>
-                  <th className="p-4 text-center font-bold text-purple-600">Frontend</th>
-                  <th className="p-4 text-center font-bold text-emerald-600">Analytics</th>
-                </tr>
-              </thead>
-              <tbody>
-                {pathComparison.map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                    <td className="p-4 font-semibold text-gray-900">{row.aspect}</td>
-                    <td className="p-4 text-center text-gray-700">{row.smart}</td>
-                    <td className="p-4 text-center text-gray-700">{row.frontend}</td>
-                    <td className="p-4 text-center text-gray-700">{row.analytics}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        {/* Main Skills Grid */}
+        <div className="space-y-4 mb-20">
+          {skills.map((skill) => (
+            <div key={skill.id} className="group">
+              <button
+                onClick={() => setExpandedId(expandedId === skill.id ? null : skill.id)}
+                className="w-full text-left"
+              >
+                <div className="border border-gray-800 hover:border-gray-700 bg-gradient-to-r from-gray-900/50 to-transparent hover:bg-gradient-to-r hover:from-gray-800/50 hover:to-transparent p-8 rounded-lg transition-all duration-300 cursor-pointer group"
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 rounded bg-gray-800 group-hover:bg-gray-700 transition flex items-center justify-center">
+                          <Code2 size={16} />
+                        </div>
+                        <h2 className="text-2xl font-bold">{skill.title}</h2>
+                      </div>
+                      <p className="text-gray-400 mb-4">{skill.shortDesc}</p>
+                      <div className="flex gap-6 text-sm">
+                        <div>
+                          <span className="text-gray-500">Earnings</span>
+                          <div className="font-bold text-green-400">{skill.earnings}</div>
+                        </div>
+                        <div>
+                          <span className="text-gray-500">Difficulty</span>
+                          <div className="font-bold">{skill.difficulty}</div>
+                        </div>
+                        <div>
+                          <span className="text-gray-500">Timeline</span>
+                          <div className="font-bold">{skill.timeframe}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className={`text-gray-600 transition-transform duration-300 ${expandedId === skill.id ? 'rotate-90' : ''}`}>
+                      <ChevronRight size={24} />
+                    </div>
+                  </div>
+                </div>
+              </button>
+
+              {/* Expanded Content */}
+              {expandedId === skill.id && (
+                <div className="bg-gray-900/50 border border-gray-800 border-t-0 rounded-b-lg p-8 space-y-8 animate-in fade-in duration-300">
+                  
+                  {/* Tools */}
+                  <div>
+                    <h3 className="font-bold text-lg mb-4 uppercase tracking-wide text-gray-400">Tools & Tech Stack</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {skill.tools.map((tool, i) => (
+                        <div key={i} className="border border-gray-800 rounded p-4 hover:border-gray-700 transition">
+                          <div className="font-bold mb-1">{tool.name}</div>
+                          <div className="text-sm text-gray-500">{tool.desc}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Pay */}
+                  <div>
+                    <h3 className="font-bold text-lg mb-4 uppercase tracking-wide text-gray-400">How You Get Paid</h3>
+                    <div className="space-y-2">
+                      {skill.pay.map((p, i) => (
+                        <div key={i} className="flex gap-3 text-gray-300">
+                          <span className="text-green-400 font-bold">$</span>
+                          {p}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Gigs */}
+                  <div>
+                    <h3 className="font-bold text-lg mb-4 uppercase tracking-wide text-gray-400">Where to Find Work</h3>
+                    <div className="space-y-2">
+                      {skill.gigs.map((gig, i) => (
+                        <div key={i} className="flex gap-3 text-gray-300">
+                          <span className="text-blue-400">→</span>
+                          {gig}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Prerequisites */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="font-bold text-lg mb-4 uppercase tracking-wide text-gray-400">You'll Need</h3>
+                      <div className="space-y-2">
+                        {skill.need.map((n, i) => (
+                          <div key={i} className="flex gap-3 text-gray-300">
+                            <span className="text-amber-400">•</span>
+                            {n}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="font-bold text-lg mb-4 uppercase tracking-wide text-gray-400 text-red-400">Watch Out</h3>
+                      <div className="space-y-2">
+                        {skill.watch.map((w, i) => (
+                          <div key={i} className="flex gap-3 text-gray-300">
+                            <span className="text-red-400">⚠</span>
+                            {w}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Comparison */}
+        <div className="border border-gray-800 rounded-lg p-8 mb-20 bg-gray-900/30">
+          <h2 className="text-3xl font-bold mb-8">Quick Breakdown</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <div className="text-sm text-gray-500 mb-2">EASIEST TO START</div>
+              <div className="text-lg font-bold mb-4">Analytics</div>
+              <p className="text-gray-400 text-sm">If you know SQL, you can start earning in weeks. Lowest barrier to entry.</p>
+            </div>
+            <div>
+              <div className="text-sm text-gray-500 mb-2">HIGHEST CEILING</div>
+              <div className="text-lg font-bold mb-4">Smart Contracts</div>
+              <p className="text-gray-400 text-sm">Most specialized skill = highest salaries. But steeper learning curve.</p>
+            </div>
+            <div>
+              <div className="text-sm text-gray-500 mb-2">MOST FLEXIBLE</div>
+              <div className="text-lg font-bold mb-4">Frontend</div>
+              <p className="text-gray-400 text-sm">Portfolio matters most. Easy to build projects and show your work.</p>
+            </div>
           </div>
         </div>
 
-        {/* Advanced Roles */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-8">Advanced Specializations</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {advancedRoles.map((role, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border-l-4 border-purple-600">
-                <h3 className="font-bold text-lg text-gray-900 mb-2">{role.title}</h3>
-                <p className="text-gray-600 mb-4">{role.desc}</p>
-                <p className="text-green-600 font-semibold">{role.earnings}</p>
+        {/* Advanced */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-bold mb-8">Level Up: Advanced Paths</h2>
+          <p className="text-gray-400 mb-8">Once you've mastered the basics, these specializations pay even more:</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {advanced.map((role, i) => (
+              <div key={i} className="border border-gray-800 hover:border-gray-700 rounded p-6 transition">
+                <div className="font-bold text-lg mb-2">{role.title}</div>
+                <div className="text-green-400 font-mono text-sm">{role.money}</div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Action Plan */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl p-8 mb-8">
-          <h2 className="text-2xl font-bold mb-6">🚀 Getting Started Action Plan</h2>
-          <div className="space-y-4">
+        {/* CTA */}
+        <div className="border border-gray-800 rounded-lg p-12 bg-gradient-to-br from-blue-950/20 to-purple-950/20 mb-20">
+          <h2 className="text-3xl font-bold mb-6">How to Actually Get Started</h2>
+          <div className="space-y-6">
             <div className="flex gap-4">
-              <div className="bg-white text-blue-600 rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">1</div>
+              <div className="text-2xl font-bold text-gray-600 min-w-8">1</div>
               <div>
-                <p className="font-bold mb-1">Choose Your Path</p>
-                <p className="text-blue-100">Pick one specialization and commit to it for 3-6 months</p>
+                <div className="font-bold mb-1">Pick ONE path</div>
+                <div className="text-gray-400">Don't spread yourself thin. Choose smart contracts, frontend, or analytics. Go all-in for 3-6 months.</div>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="bg-white text-purple-600 rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">2</div>
+              <div className="text-2xl font-bold text-gray-600 min-w-8">2</div>
               <div>
-                <p className="font-bold mb-1">Build Projects</p>
-                <p className="text-blue-100">Create real, shipping projects and showcase them publicly</p>
+                <div className="font-bold mb-1">Build something real</div>
+                <div className="text-gray-400">Don't just watch tutorials. Ship projects. Put them on GitHub. Show people what you can do.</div>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="bg-white text-blue-600 rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">3</div>
+              <div className="text-2xl font-bold text-gray-600 min-w-8">3</div>
               <div>
-                <p className="font-bold mb-1">Network & Apply</p>
-                <p className="text-blue-100">Join DAOs, apply for jobs, contribute to open-source, compete in bounties</p>
+                <div className="font-bold mb-1">Get your first gig</div>
+                <div className="text-gray-400">Freelance, bounty, job, DAO contributor—doesn't matter. You need that first paid experience.</div>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="bg-white text-purple-600 rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">4</div>
+              <div className="text-2xl font-bold text-gray-600 min-w-8">4</div>
               <div>
-                <p className="font-bold mb-1">Iterate & Grow</p>
-                <p className="text-blue-100">Learn from feedback, build your reputation, move to higher-impact roles</p>
+                <div className="font-bold mb-1">Build your reputation</div>
+                <div className="text-gray-400">One gig leads to the next. Ship quality work. Get paid more. Climb the ladder.</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Resources */}
-        <div className="bg-white rounded-xl p-8 shadow-lg">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">📚 Learning Resources</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="border-l-4 border-blue-600 pl-4">
-              <h3 className="font-bold text-gray-900 mb-2">Smart Contracts</h3>
-              <ul className="text-gray-700 space-y-1 text-sm">
-                <li>• Cryptozombies.io - Interactive Solidity tutorial</li>
-                <li>• OpenZeppelin Docs - Industry-standard patterns</li>
-                <li>• Hardhat - Smart contract framework</li>
-              </ul>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+          <div className="border border-gray-800 rounded-lg p-6">
+            <h3 className="font-bold text-lg mb-4">Learning Platforms</h3>
+            <div className="space-y-3 text-gray-400 text-sm">
+              <div><span className="text-gray-600">→</span> Cryptozombies.io (Solidity tutorial)</div>
+              <div><span className="text-gray-600">→</span> Hardhat (smart contract dev)</div>
+              <div><span className="text-gray-600">→</span> The Odin Project (React)</div>
+              <div><span className="text-gray-600">→</span> Dune Analytics (start building)</div>
+              <div><span className="text-gray-600">→</span> Mode SQL Tutorial (queries)</div>
             </div>
-            <div className="border-l-4 border-purple-600 pl-4">
-              <h3 className="font-bold text-gray-900 mb-2">Frontend</h3>
-              <ul className="text-gray-700 space-y-1 text-sm">
-                <li>• The Odin Project - React fundamentals</li>
-                <li>• Wagmi documentation - Web3 React hooks</li>
-                <li>• Web3 UI libraries - RainbowKit, ConnectKit</li>
-              </ul>
-            </div>
-            <div className="border-l-4 border-emerald-600 pl-4">
-              <h3 className="font-bold text-gray-900 mb-2">Analytics</h3>
-              <ul className="text-gray-700 space-y-1 text-sm">
-                <li>• Dune Analytics - Start building dashboards</li>
-                <li>• Mode SQL Tutorial - Query blockchain data</li>
-                <li>• The Graph documentation - GraphQL queries</li>
-              </ul>
-            </div>
-            <div className="border-l-4 border-orange-600 pl-4">
-              <h3 className="font-bold text-gray-900 mb-2">Job Boards</h3>
-              <ul className="text-gray-700 space-y-1 text-sm">
-                <li>• Cryptocurrency.jobs</li>
-                <li>• We3.careers</li>
-                <li>• Angel.co (Web3 filter)</li>
-              </ul>
+          </div>
+
+          <div className="border border-gray-800 rounded-lg p-6">
+            <h3 className="font-bold text-lg mb-4">Job Boards & Bounties</h3>
+            <div className="space-y-3 text-gray-400 text-sm">
+              <div><span className="text-gray-600">→</span> Cryptocurrency.jobs</div>
+              <div><span className="text-gray-600">→</span> We3.careers</div>
+              <div><span className="text-gray-600">→</span> Angel.co (Web3 filter)</div>
+              <div><span className="text-gray-600">→</span> Dune / Flipside (bounties)</div>
+              <div><span className="text-gray-600">→</span> Upwork (freelance)</div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Footer */}
-      <div className="bg-slate-900 border-t border-slate-700 mt-16 py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center text-slate-400">
-          <p>Web3 is evolving rapidly. Keep learning, stay curious, and build amazing things.</p>
+        {/* Footer Message */}
+        <div className="text-center py-12 border-t border-gray-800">
+          <p className="text-gray-500">
+            Web3 moves fast. Pick a path, commit to learning, and start shipping. The market rewards people who can actually build.
+          </p>
         </div>
       </div>
     </div>
