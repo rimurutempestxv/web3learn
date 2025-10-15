@@ -373,6 +373,9 @@ export default function Web3DevGuide() {
           <p className="text-gray-500">
             Web3 moves fast. Pick a path, commit to learning, and start shipping. The market rewards people who can actually build.
           </p>
+          <p className="text-gray-500">
+         BY RIMURU TEMPEST
+          </p>
         </div>
       </div>
     </div>
